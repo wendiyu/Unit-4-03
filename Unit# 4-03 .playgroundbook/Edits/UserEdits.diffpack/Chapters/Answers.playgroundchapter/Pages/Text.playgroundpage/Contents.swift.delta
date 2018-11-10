@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>//Created on: 05-Nov-2018
+//Created by: Wendi Yu
+//Created for: ICS3UR
+// display addresse, Apt.number, city, province, postal code 
+
+import Foundation
+
+func printAddress(aptNumber : String = "NA", address : String, cityName : String, provinceName : String, postal : String) {
+    
+    show("\(aptNumber),\(address),\(cityName),\(provinceName),\(postal)")
+}
+show("Enter your street address: ")
+if let streetAddress : String = ask() {
+    show("Enter your city: ")
+    if let city : String = ask() {
+        show("Enter your province:")
+        if let province : String = ask(){
+            show("Enter your Postal Code: ")
+            if let postalCode : String = ask() {
+                show("Do you want to enter Apt.Number? If yes, please enter 1. If no, enter 2")
+                if let aptChoice : String = ask(){
+                    if aptChoice == "1" || aptChoice == "2" {
+                        if aptChoice == "1" {
+                            show("Enter your Apt.Number : ")
+                            if let Number : String = ask() {
+                                printAddress(aptNumber: Number, address: streetAddress, cityName: city, provinceName: province, postal: postalCode)
+                            }
+                        }
+                        else {
+                            printAddress(address: streetAddress, cityName: city, provinceName: province, postal: postalCode)
+                        }
+                    }
+                }
+                else {
+                    show("Please put a valid number! 1 or 2 ")
+                }
+            }
+            else {
+                show("Please, put a postal code !")
+            }
+        }
+        else {
+            show("Please, put a province!")
+        }
+    }
+    else {
+        show("Please, put a city!")
+    }
+}
+else {
+    show("Please, put a street address!")
+}
+
+</string>
+			<key>ModifiedRange</key>
+			<string>{145, 1870}</string>
+			<key>OriginalContent</key>
+			<string>show("What is your name?")
+
+let name = ask("Name")
+
+show("Hi " + name)
+</string>
+			<key>OriginalRange</key>
+			<string>{145, 71}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Answers.playgroundchapter/Pages/Text.playgroundpage/Contents.swift</string>
+</dict>
+</plist>
